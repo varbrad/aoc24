@@ -18,7 +18,7 @@ describe('d1:p1', () => {
 
   it('should solve the puzzle input', async () => {
     const input = await fs.readFile(
-      path.resolve(__dirname, '../input/day1.txt'),
+      path.resolve(__dirname, '../input/day01.txt'),
       'utf-8',
     )
     expect(day1.part1(input)).toEqual(1222801)
@@ -40,7 +40,7 @@ describe('d1:p2', () => {
 
   it('should solve the puzzle input', async () => {
     const input = await fs.readFile(
-      path.resolve(__dirname, '../input/day1.txt'),
+      path.resolve(__dirname, '../input/day01.txt'),
       'utf-8',
     )
     expect(day1.part2(input)).toEqual(22545250)
