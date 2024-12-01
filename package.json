@@ -2,6 +2,9 @@
   "name": "aoc24",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "lint": "biome check"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest"
