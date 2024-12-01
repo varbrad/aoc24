@@ -18,5 +18,10 @@
     "titleBar.inactiveBackground": "#0f5a2499",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#0f5a24"
+  "peacock.color": "#0f5a24",
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  }
 }
