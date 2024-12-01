@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'bun:test';
-import * as day1 from '../src/day1';
+import { describe, expect, it } from 'bun:test'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import * as day1 from '../src/day01'
 
 describe('d1:p1', () => {
   it('should solve the example input', () => {
@@ -17,7 +17,10 @@ describe('d1:p1', () => {
   })
 
   it('should solve the puzzle input', async () => {
-    const input = await fs.readFile(path.resolve(__dirname, '../input/day1.txt'), 'utf-8')
+    const input = await fs.readFile(
+      path.resolve(__dirname, '../input/day1.txt'),
+      'utf-8',
+    )
     expect(day1.part1(input)).toEqual(1222801)
   })
 })
@@ -36,7 +39,10 @@ describe('d1:p2', () => {
   })
 
   it('should solve the puzzle input', async () => {
-    const input = await fs.readFile(path.resolve(__dirname, '../input/day1.txt'), 'utf-8')
+    const input = await fs.readFile(
+      path.resolve(__dirname, '../input/day1.txt'),
+      'utf-8',
+    )
     expect(day1.part2(input)).toEqual(22545250)
   })
 })
