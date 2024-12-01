@@ -16,7 +16,7 @@ export const part1 = (input: string): number => {
 
 export const part2 = (input: string): number => {
   const [a, b] = parse(input)
-  return a.reduce((acc, v, i) => {
+  return a.reduce((acc, v) => {
     const occurences = b.filter(x => x === v).length
     return acc + v * occurences
   }, 0)
