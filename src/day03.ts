@@ -1,18 +1,9 @@
-const regex = /mul\((\d{1,3}),(\d{1,3})\)/g
-export const part1 = (input: string): number => {
-  let sum = 0
-  for (const match of input.matchAll(regex)) {
-    const [_, a, b] = match
-    sum += Number(a) * Number(b)
-  }
-  return sum
-}
+const regex = /mul\((\d{1,3}),(\d{1,3})\)|don't\(\)|do\(\)/g
 
-const regex2 = /mul\((\d{1,3}),(\d{1,3})\)|don't\(\)|do\(\)/g
-export const part2 = (input: string): number => {
+const solve = (input: string, useConditionals: boolean): number => {
   let sum = 0
   let enabled = true
-  for (const match of input.matchAll(regex2)) {
+  for (const match of input.matchAll(regex)) {
     const [op, a, b] = match
     switch (op) {
       case 'do()':
@@ -22,8 +13,11 @@ export const part2 = (input: string): number => {
         enabled = false
         break
       default:
-        sum += enabled ? Number(a) * Number(b) : 0
+        sum += !useConditionals || enabled ? Number(a) * Number(b) : 0
     }
   }
   return sum
 }
+
+export const part1 = (input: string): number => solve(input, false)
+export const part2 = (input: string): number => solve(input, true)
